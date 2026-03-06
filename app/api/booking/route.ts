@@ -23,7 +23,14 @@ export async function POST(req: Request) {
 
     const data = body as BookingFormData
 
-    // Save to KV
+    // Validate email format
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      return NextResponse.json({ error: 'Invalid email address' }, { status: 400 })
+    }
+
+    // NOTE: KV write is not rolled back if PDF generation or email delivery fails.
+    // Resubmissions will produce duplicate inquiry records. A deduplication
+    // or retry mechanism should be added before production use.
     const inquiry = await saveInquiry(data)
 
     // Generate PDF
