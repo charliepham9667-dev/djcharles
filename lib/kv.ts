@@ -18,7 +18,7 @@ export async function getInquiries(): Promise<Inquiry[]> {
   const ids = await kv.zrange('inquiries:all', 0, -1, { rev: true })
   if (!ids || ids.length === 0) return []
   const results = await Promise.all(ids.map((id) => kv.hgetall(`inquiry:${id}`)))
-  return results.filter(Boolean) as Inquiry[]
+  return results.filter(Boolean) as unknown as Inquiry[]
 }
 
 export async function updateInquiryStatus(id: string, status: InquiryStatus): Promise<void> {
