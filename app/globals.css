@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@theme {
+  --color-gold: #C9A84C;
+  --color-surface: #111111;
+
+  --font-family-spartan: var(--font-spartan), sans-serif;
+  --font-family-inter: var(--font-inter), sans-serif;
+  --font-family-mono: var(--font-dm-mono), monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: var(--font-inter), sans-serif;
+  }
+}
