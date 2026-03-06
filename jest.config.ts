@@ -7,6 +7,7 @@ const config: Config = {
     '^@/(.*)$': '<rootDir>/$1',
   },
   testMatch: ['**/__tests__/**/*.test.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 }
 
 export default config
