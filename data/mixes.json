@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Late Night Frequencies Vol. 1",
+    "date": "2025-11-01",
+    "duration": "1:02:14",
+    "platform": "soundcloud",
+    "embedUrl": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1234567&color=%23C9A84C&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+  },
+  {
+    "id": "2",
+    "title": "East Meets West — Global House",
+    "date": "2025-09-15",
+    "duration": "58:30",
+    "platform": "soundcloud",
+    "embedUrl": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2345678&color=%23C9A84C&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+  },
+  {
+    "id": "3",
+    "title": "Midnight in Haugesund",
+    "date": "2025-06-21",
+    "duration": "1:15:00",
+    "platform": "youtube",
+    "embedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  }
+]

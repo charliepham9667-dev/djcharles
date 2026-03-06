@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Babel Oslo — New Year's Eve",
+    "location": "Oslo, Norway",
+    "date": "2025-12-31",
+    "category": "Club",
+    "youtubeId": "dQw4w9WgXcQ"
+  },
+  {
+    "id": "2",
+    "title": "Private Rooftop — Summer Gala",
+    "location": "Bergen, Norway",
+    "date": "2025-07-12",
+    "category": "Private",
+    "youtubeId": "dQw4w9WgXcQ"
+  },
+  {
+    "id": "3",
+    "title": "Øya Festival — Electronic Stage",
+    "location": "Oslo, Norway",
+    "date": "2025-08-09",
+    "category": "Festival",
+    "youtubeId": "dQw4w9WgXcQ"
+  }
+]
