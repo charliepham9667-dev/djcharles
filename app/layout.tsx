@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     title: 'DJ Charle$',
     description: 'Where Every Set Tells a Story',
     type: 'website',
+    url: process.env.NEXT_PUBLIC_SITE_URL,
   },
 }
 

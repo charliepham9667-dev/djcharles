@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useScroll, useMotionValueEvent, motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const NAV_LINKS = [
   { href: '/#about', label: 'About' },
@@ -21,17 +21,14 @@ export default function Navbar() {
 
   useMotionValueEvent(scrollY, 'change', (y) => setScrolled(y > 80))
 
-  // Close menu on route change
-  const [prevPath, setPrevPath] = useState(pathname)
-  if (pathname !== prevPath) {
-    setPrevPath(pathname)
+  useEffect(() => {
     setMenuOpen(false)
-  }
+  }, [pathname])
 
   return (
     <>
       <motion.nav
-        className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 flex items-center justify-between"
+        className="fixed top-0 left-0 right-0 z-[60] px-6 md:px-12 py-4 flex items-center justify-between"
         animate={{ backgroundColor: scrolled ? '#000000' : 'rgba(0,0,0,0)' }}
         transition={{ duration: 0.3 }}
       >
@@ -60,9 +57,9 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-px bg-white transition-transform duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-2.5' : ''}`} />
+          <span className={`block w-6 h-px bg-white transition-transform duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
           <span className={`block w-6 h-px bg-white transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-px bg-white transition-transform duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
+          <span className={`block w-6 h-px bg-white transition-transform duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
         </button>
       </motion.nav>
 
@@ -70,7 +67,7 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
