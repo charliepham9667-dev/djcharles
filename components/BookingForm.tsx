@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
-const inputClass = "w-full bg-surface border border-white/20 text-white font-inter px-4 py-3 rounded-none focus:outline-none focus:border-gold transition-colors duration-200 placeholder:text-white/30"
-const labelClass = "block font-mono text-xs text-white/50 uppercase tracking-widest mb-2"
+const inputClass =
+  'w-full bg-transparent border-b border-white/30 text-white font-inter py-3 focus:outline-none focus:border-white transition-colors duration-200 placeholder:text-white/20'
+const labelClass = 'block font-mono text-xs text-white/40 uppercase tracking-widest mb-2'
 
 export default function BookingForm() {
   const [form, setForm] = useState({
@@ -40,79 +42,97 @@ export default function BookingForm() {
     }
   }
 
-  if (status === 'success') {
-    return (
-      <div className="border border-gold/40 bg-gold/5 p-8 text-center">
-        <p className="font-spartan font-black text-2xl text-gold uppercase mb-2">Inquiry Sent</p>
-        <p className="font-inter text-white/60 text-sm">Check your inbox — I've sent you a rate card and will be in touch within 24 hours.</p>
-      </div>
-    )
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label className={labelClass}>Full Name</label>
-          <input name="name" value={form.name} onChange={handleChange} required className={inputClass} placeholder="Your name" />
-        </div>
-        <div>
-          <label className={labelClass}>Email Address</label>
-          <input name="email" type="email" value={form.email} onChange={handleChange} required className={inputClass} placeholder="your@email.com" />
-        </div>
-        <div>
-          <label className={labelClass}>Event Type</label>
-          <select name="eventType" value={form.eventType} onChange={handleChange} required className={inputClass}>
-            <option value="">Select event type</option>
-            {['Club Night', 'Private Party', 'Wedding', 'Corporate', 'Festival', 'Other'].map(t => (
-              <option key={t} value={t}>{t}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label className={labelClass}>Event Date</label>
-          <input name="eventDate" type="date" value={form.eventDate} onChange={handleChange} required className={inputClass} />
-        </div>
-        <div>
-          <label className={labelClass}>Location / City</label>
-          <input name="location" value={form.location} onChange={handleChange} required className={inputClass} placeholder="Oslo, Norway" />
-        </div>
-        <div>
-          <label className={labelClass}>Expected Guest Count</label>
-          <select name="guestCount" value={form.guestCount} onChange={handleChange} required className={inputClass}>
-            <option value="">Select guest count</option>
-            {['Under 50', '50–100', '100–250', '250–500', '500+'].map(g => (
-              <option key={g} value={g}>{g}</option>
-            ))}
-          </select>
-        </div>
-        <div className="md:col-span-2">
-          <label className={labelClass}>Package Interest</label>
-          <select name="package" value={form.package} onChange={handleChange} required className={inputClass}>
-            <option value="">Select a package</option>
-            {['Basic Set', 'Extended Set', 'Full Night', 'Custom'].map(p => (
-              <option key={p} value={p}>{p}</option>
-            ))}
-          </select>
-        </div>
-      </div>
+    <AnimatePresence mode="wait">
+      {status === 'success' ? (
+        <motion.div
+          key="success"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="py-12"
+        >
+          <p
+            className="font-bebas text-white uppercase leading-none"
+            style={{ fontSize: 'clamp(3rem, 8vw, 80px)' }}
+          >
+            Inquiry Received
+          </p>
+          <p className="font-mono text-xs text-white/40 mt-4 uppercase tracking-widest">
+            Check your inbox — I&apos;ll be in touch within 24 hours.
+          </p>
+        </motion.div>
+      ) : (
+        <motion.form
+          key="form"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onSubmit={handleSubmit}
+          className="space-y-8"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <label className={labelClass}>Full Name</label>
+              <input name="name" value={form.name} onChange={handleChange} required className={inputClass} placeholder="Your name" />
+            </div>
+            <div>
+              <label className={labelClass}>Email Address</label>
+              <input name="email" type="email" value={form.email} onChange={handleChange} required className={inputClass} placeholder="your@email.com" />
+            </div>
+            <div>
+              <label className={labelClass}>Event Type</label>
+              <select name="eventType" value={form.eventType} onChange={handleChange} required className={`${inputClass} bg-black`}>
+                <option value="">Select event type</option>
+                {['Club Night', 'Private Party', 'Wedding', 'Corporate', 'Festival', 'Other'].map(t => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className={labelClass}>Event Date</label>
+              <input name="eventDate" type="date" value={form.eventDate} onChange={handleChange} required className={`${inputClass} [color-scheme:dark]`} />
+            </div>
+            <div>
+              <label className={labelClass}>Location / City</label>
+              <input name="location" value={form.location} onChange={handleChange} required className={inputClass} placeholder="Oslo, Norway" />
+            </div>
+            <div>
+              <label className={labelClass}>Expected Guest Count</label>
+              <select name="guestCount" value={form.guestCount} onChange={handleChange} required className={`${inputClass} bg-black`}>
+                <option value="">Select guest count</option>
+                {['Under 50', '50–100', '100–250', '250–500', '500+'].map(g => (
+                  <option key={g} value={g}>{g}</option>
+                ))}
+              </select>
+            </div>
+            <div className="md:col-span-2">
+              <label className={labelClass}>Package Interest</label>
+              <select name="package" value={form.package} onChange={handleChange} required className={`${inputClass} bg-black`}>
+                <option value="">Select a package</option>
+                {['Basic Set', 'Extended Set', 'Full Night', 'Custom'].map(p => (
+                  <option key={p} value={p}>{p}</option>
+                ))}
+              </select>
+            </div>
+          </div>
 
-      <div>
-        <label className={labelClass}>Additional Message</label>
-        <textarea name="message" value={form.message} onChange={handleChange} rows={5} className={inputClass} placeholder="Tell me about your event..." />
-      </div>
+          <div>
+            <label className={labelClass}>Additional Message</label>
+            <textarea name="message" value={form.message} onChange={handleChange} rows={4} className={inputClass} placeholder="Tell me about your event..." />
+          </div>
 
-      {status === 'error' && (
-        <p className="font-mono text-xs text-red-400">{errorMsg}</p>
+          {status === 'error' && (
+            <p className="font-mono text-xs text-red-400">{errorMsg}</p>
+          )}
+
+          <button
+            type="submit"
+            disabled={status === 'loading'}
+            className="bg-white text-black font-bebas uppercase tracking-widest px-12 py-4 text-lg hover:bg-white/80 transition-colors duration-300 disabled:opacity-50"
+          >
+            {status === 'loading' ? 'Sending…' : 'Send Inquiry'}
+          </button>
+        </motion.form>
       )}
-
-      <button
-        type="submit"
-        disabled={status === 'loading'}
-        className="w-full md:w-auto bg-gold text-black font-spartan font-black uppercase tracking-widest px-12 py-4 text-sm hover:bg-white transition-colors duration-300 disabled:opacity-50"
-      >
-        {status === 'loading' ? 'Sending…' : 'Send Inquiry'}
-      </button>
-    </form>
+    </AnimatePresence>
   )
 }
