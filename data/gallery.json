@@ -1,7 +1,51 @@
 [
-  { "id": "1", "src": "/images/gallery/gig-01.jpg", "alt": "DJ Charle$ at Babel Oslo", "event": "Babel Oslo", "date": "2025-12-31" },
-  { "id": "2", "src": "/images/gallery/gig-02.jpg", "alt": "Rooftop set in Bergen", "event": "Bergen Rooftop Gala", "date": "2025-07-12" },
-  { "id": "3", "src": "/images/gallery/gig-03.jpg", "alt": "Øya Festival crowd", "event": "Øya Festival", "date": "2025-08-09" },
-  { "id": "4", "src": "/images/gallery/gig-04.jpg", "alt": "Club set in Stavanger", "event": "Club Stavanger", "date": "2025-05-03" },
-  { "id": "5", "src": "/images/gallery/gig-05.jpg", "alt": "Corporate event Oslo", "event": "Oslo Corporate Gala", "date": "2025-03-18" }
+  {
+    "id": "3",
+    "src": "/images/gallery/IMG_1186.JPG",
+    "alt": "DJ Charle$",
+    "event": "Event",
+    "date": "2025-01-01"
+  },
+  {
+    "id": "5",
+    "src": "/images/gallery/IMG_1191.JPG",
+    "alt": "DJ Charle$",
+    "event": "Event",
+    "date": "2025-01-01"
+  },
+  {
+    "id": "13",
+    "src": "/images/gallery/IMG_1766.JPG",
+    "alt": "DJ Charle$",
+    "event": "Event",
+    "date": "2025-01-01"
+  },
+  {
+    "id": "14",
+    "src": "/images/gallery/IMG_1767.JPG",
+    "alt": "DJ Charle$",
+    "event": "Event",
+    "date": "2025-01-01"
+  },
+  {
+    "id": "18",
+    "src": "/images/gallery/_HON9194.JPEG",
+    "alt": "DJ Charle$",
+    "event": "Event",
+    "date": "2025-01-01"
+  },
+  {
+    "id": "22",
+    "src": "/images/gallery/467312548n.jpg",
+    "alt": "DJ Charle$",
+    "event": "Event",
+    "date": "2025-01-01"
+  },
+  {
+    "id": "28",
+    "src": "/images/gallery/uten-tittel-5.png",
+    "alt": "DJ Charle$",
+    "event": "Event",
+    "date": "2025-01-01"
+  }
 ]

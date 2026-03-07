@@ -5,6 +5,8 @@ export interface Video {
   date: string
   category: 'Club' | 'Private' | 'Festival' | 'Other'
   youtubeId: string
+  videoUrl?: string    // uploaded video file; takes priority over youtubeId if set
+  thumbnailUrl?: string // custom thumbnail image for uploaded videos
 }
 
 export interface Mix {

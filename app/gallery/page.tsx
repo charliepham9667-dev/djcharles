@@ -1,12 +1,12 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import GalleryGrid from '@/components/GalleryGrid'
-import galleryData from '@/data/gallery.json'
-import type { GalleryImage } from '@/types'
+import { getGallery } from '@/lib/data'
 
-const images = galleryData as GalleryImage[]
+export const dynamic = 'force-dynamic'
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  const images = await getGallery()
   return (
     <>
       <Navbar />

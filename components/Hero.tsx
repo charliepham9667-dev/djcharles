@@ -3,11 +3,20 @@
 import { motion } from 'framer-motion'
 import NoiseTexture from './NoiseTexture'
 
-export default function Hero() {
+export default function Hero({ heroImage }: { heroImage?: string | null }) {
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Photo placeholder — replace div with next/image when photos are ready */}
-      <NoiseTexture id="hero-noise" />
+      {/* Background: photo if set, noise texture otherwise */}
+      {heroImage ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={heroImage}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+      ) : (
+        <NoiseTexture id="hero-noise" />
+      )}
 
       {/* Gradient overlay */}
       <div
@@ -19,7 +28,7 @@ export default function Hero() {
       <div className="relative z-20 h-full flex flex-col justify-end px-8 md:px-16 pb-14">
         <motion.h1
           className="font-bebas text-white uppercase leading-none"
-          style={{ fontSize: 'clamp(5rem, 16vw, 160px)' }}
+          style={{ fontSize: 'clamp(5rem, 16vw, 160px)', lineHeight: 0.85 }}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}

@@ -38,8 +38,8 @@ export default function VideoModal({ video, onClose }: VideoModalProps) {
           >
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="font-spartan font-black text-white uppercase">{video.title}</h3>
-                <p className="font-mono text-xs text-gold/70">{video.location} · {video.date}</p>
+                <h3 className="font-bebas text-white text-xl uppercase">{video.title}</h3>
+                <p className="font-mono text-xs text-white/40">{video.location} · {video.date}</p>
               </div>
               <button
                 onClick={onClose}
@@ -49,14 +49,23 @@ export default function VideoModal({ video, onClose }: VideoModalProps) {
                 ×
               </button>
             </div>
-            <div className="relative aspect-video bg-surface">
-              <iframe
-                src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1`}
-                className="absolute inset-0 w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title={video.title}
-              />
+            <div className="relative aspect-video bg-black">
+              {video.videoUrl ? (
+                <video
+                  src={video.videoUrl}
+                  controls
+                  autoPlay
+                  className="absolute inset-0 w-full h-full"
+                />
+              ) : (
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1`}
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title={video.title}
+                />
+              )}
             </div>
           </motion.div>
         </motion.div>

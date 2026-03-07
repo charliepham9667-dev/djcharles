@@ -4,14 +4,19 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import NoiseTexture from './NoiseTexture'
 
-export default function About() {
+export default function About({ aboutImage }: { aboutImage?: string | null }) {
   const ref = useRef<HTMLElement>(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
     <section id="about" ref={ref} className="relative min-h-screen overflow-hidden">
-      {/* Photo placeholder */}
-      <NoiseTexture id="about-noise" />
+      {/* Background: photo if set, noise texture otherwise */}
+      {aboutImage ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={aboutImage} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+      ) : (
+        <NoiseTexture id="about-noise" />
+      )}
 
       {/* Gradient overlay */}
       <div
@@ -47,12 +52,12 @@ export default function About() {
           <p className="font-inter text-white/80 text-base md:text-lg leading-relaxed">
             Haugesund, Norway. A coastal city of grey skies and stubborn weather, where everyone
             knows everyone and difference is noticed before it&apos;s understood. I grew up here,
-            the son of Vietnamese immigrants — a family who crossed oceans for a better life and
+            the son of Vietnamese immigrants, a family who crossed oceans for a better life and
             landed in one of the world&apos;s most homogeneous societies.
           </p>
           <p className="font-inter text-white/80 text-base md:text-lg leading-relaxed">
-            That upbringing — east meets west, tradition meets modernity, silence meets noise —
-            became my musical compass. Whether it&apos;s a rooftop in Bergen or a club in Oslo,
+            That upbringing shaped everything. East meets west, tradition meets modernity, silence meets noise.
+            Whether it&apos;s a rooftop in Bergen or a club in Oslo,
             I arrive with the same intention: to make everyone in the room feel like they belong.
           </p>
           <p className="font-bebas text-white text-2xl md:text-3xl uppercase leading-tight">
@@ -60,16 +65,6 @@ export default function About() {
             The music is the night.
           </p>
         </motion.div>
-
-        {/* Bottom-right meta */}
-        <motion.p
-          className="font-mono text-xs text-white/25 uppercase tracking-widest self-end"
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.4 }}
-        >
-          Oslo, Norway · Est. 2018
-        </motion.p>
       </div>
     </section>
   )

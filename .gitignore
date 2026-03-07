@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# uploaded media — stored in Vercel Blob in production
+/public/videos/
+/public/images/gallery/
+/public/images/thumbnails/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

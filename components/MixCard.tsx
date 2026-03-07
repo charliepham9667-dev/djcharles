@@ -8,6 +8,20 @@ const PLATFORM_LABEL: Record<string, string> = {
   youtube: 'YouTube',
 }
 
+function toEmbedUrl(url: string, platform: string): string {
+  if (platform === 'soundcloud') {
+    if (url.includes('w.soundcloud.com/player')) return url
+    // Convert any SoundCloud share/track URL to the iframe embed format
+    return `https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false`
+  }
+  if (platform === 'youtube') {
+    const match = url.match(/(?:v=|youtu\.be\/)([^&?/]+)/)
+    if (match) return `https://www.youtube.com/embed/${match[1]}`
+    return url
+  }
+  return url
+}
+
 export default function MixCard({ mix }: { mix: Mix }) {
   return (
     <motion.div
@@ -35,7 +49,7 @@ export default function MixCard({ mix }: { mix: Mix }) {
         style={{ height: mix.platform === 'soundcloud' ? '166px' : '315px' }}
       >
         <iframe
-          src={mix.embedUrl}
+          src={toEmbedUrl(mix.embedUrl, mix.platform)}
           width="100%"
           height="100%"
           allow="autoplay"

@@ -10,7 +10,10 @@ interface VideoCardProps {
 }
 
 export default function VideoCard({ video, onClick }: VideoCardProps) {
-  const thumbnail = `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`
+  const thumbnail = video.thumbnailUrl
+    ?? (video.youtubeId && !video.youtubeId.startsWith('http')
+      ? `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`
+      : null)
 
   return (
     <motion.div
@@ -20,15 +23,17 @@ export default function VideoCard({ video, onClick }: VideoCardProps) {
       onClick={onClick}
     >
       <div className="relative aspect-video bg-[#111]">
-        <Image
-          src={thumbnail}
-          alt={video.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover"
-        />
+        {thumbnail && (
+          <Image
+            src={thumbnail}
+            alt={video.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover"
+          />
+        )}
 
-        {/* Overlay — lightens on hover */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors duration-300" />
 
         {/* Play icon */}

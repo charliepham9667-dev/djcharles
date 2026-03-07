@@ -1,26 +1,180 @@
 [
   {
     "id": "1",
-    "title": "Babel Oslo — New Year's Eve",
-    "location": "Oslo, Norway",
+    "title": "DJ Charle$ - We Outside @EastWest",
+    "location": "Da Nang, Vietnam",
     "date": "2025-12-31",
     "category": "Club",
-    "youtubeId": "dQw4w9WgXcQ"
-  },
-  {
-    "id": "2",
-    "title": "Private Rooftop — Summer Gala",
-    "location": "Bergen, Norway",
-    "date": "2025-07-12",
-    "category": "Private",
-    "youtubeId": "dQw4w9WgXcQ"
+    "youtubeId": "jE4KAssSJI8"
   },
   {
     "id": "3",
-    "title": "Øya Festival — Electronic Stage",
-    "location": "Oslo, Norway",
-    "date": "2025-08-09",
-    "category": "Festival",
-    "youtubeId": "dQw4w9WgXcQ"
+    "title": "DJ Charle$ - We Outside @Karma",
+    "location": "Da Nang, Vietnam",
+    "date": "2024-08-09",
+    "category": "Club",
+    "youtubeId": "https://www.instagram.com/p/DC6mGumyAsH/",
+    "videoUrl": "/videos/RECAP-WEOUSDIE.MOV",
+    "thumbnailUrl": "/images/thumbnails/RECAP-WEOUSDIE-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - White Party @TheRoof",
+    "location": "Da Nang, Vietnam",
+    "date": "2025-03-07",
+    "category": "Club",
+    "youtubeId": "",
+    "id": "1772896649987",
+    "videoUrl": "/videos/WHITE--PARTY-18.8.MP4",
+    "thumbnailUrl": "/images/thumbnails/WHITE--PARTY-18.8-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - Wedding Cam Ranh",
+    "location": "Cam Ranh, Vietnam",
+    "date": "2025-02-07",
+    "category": "Private",
+    "youtubeId": "",
+    "id": "1772896722902",
+    "videoUrl": "/videos/55B1DEA5-1F44-43AD-A6DB-3625EB0994C3.MP4",
+    "thumbnailUrl": "/images/thumbnails/55B1DEA5-1F44-43AD-A6DB-3625EB0994C3-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - The Roof",
+    "location": "Da Nang, Vietnam",
+    "date": "2024-07-01",
+    "category": "Club",
+    "youtubeId": "",
+    "id": "1772896726970",
+    "videoUrl": "/videos/IMG_8557.mov",
+    "thumbnailUrl": "/images/thumbnails/IMG_8557-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - Wedding",
+    "location": "Da Nang, Vietnam",
+    "date": "2025-01-10",
+    "category": "Private",
+    "youtubeId": "",
+    "id": "1772896729807",
+    "videoUrl": "/videos/IMG_0779.mov",
+    "thumbnailUrl": "/images/thumbnails/IMG_0779-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - We Outside NYE",
+    "location": "Da Nang, Vietnam",
+    "date": "2024-01-01",
+    "category": "Club",
+    "youtubeId": "",
+    "id": "1772896733171",
+    "videoUrl": "/videos/IMG_3421.MOV",
+    "thumbnailUrl": "/images/thumbnails/IMG_3421-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - We Outside NYE",
+    "location": "Da Nang, Vietnam",
+    "date": "2024-01-01",
+    "category": "Club",
+    "youtubeId": "",
+    "id": "1772896888788",
+    "videoUrl": "/videos/IMG_3422.MOV",
+    "thumbnailUrl": "/images/thumbnails/IMG_3422-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - The Roof NYE",
+    "location": "Da Nang, Vietnam",
+    "date": "2025-01-01",
+    "category": "Club",
+    "youtubeId": "",
+    "id": "1772896891772",
+    "videoUrl": "/videos/IMG_5672.MOV",
+    "thumbnailUrl": "/images/thumbnails/IMG_5672-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - Blends",
+    "location": "Da Nang, Vietnam",
+    "date": "2024-03-07",
+    "category": "Club",
+    "youtubeId": "",
+    "id": "1772896970407",
+    "videoUrl": "/videos/C0028.mov",
+    "thumbnailUrl": "/images/thumbnails/C0028-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - Blends",
+    "location": "",
+    "date": "2024-03-02",
+    "category": "Club",
+    "youtubeId": "",
+    "id": "1772896973305",
+    "videoUrl": "/videos/IMG_4690.mov",
+    "thumbnailUrl": "/images/thumbnails/IMG_4690-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - Wedding",
+    "location": "Da Nang, Vietnam",
+    "date": "2024-07-08",
+    "category": "Private",
+    "youtubeId": "",
+    "id": "1772897059275",
+    "videoUrl": "/videos/IMG_0795.mov",
+    "thumbnailUrl": "/images/thumbnails/IMG_0795-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - Wedding",
+    "location": "Da Nang, Vietnam",
+    "date": "2024-07-08",
+    "category": "Private",
+    "youtubeId": "",
+    "id": "1772897061576",
+    "videoUrl": "/videos/IMG_0790.mov",
+    "thumbnailUrl": "/images/thumbnails/IMG_0790-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - Wedding",
+    "location": "Cam Ranh, Vietnam",
+    "date": "2025-03-07",
+    "category": "Private",
+    "youtubeId": "",
+    "id": "1772897142091",
+    "videoUrl": "/videos/IMG_4972.MOV",
+    "thumbnailUrl": "/images/thumbnails/IMG_4972-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - The Roof NYE",
+    "location": "Da Nang, Vietnam",
+    "date": "2025-01-01",
+    "category": "Club",
+    "youtubeId": "",
+    "id": "1772897144391",
+    "videoUrl": "/videos/IMG_5669.MOV",
+    "thumbnailUrl": "/images/thumbnails/IMG_5669-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - Karma Lounge",
+    "location": "Da Nang, Vietnam",
+    "date": "2025-02-08",
+    "category": "Club",
+    "youtubeId": "",
+    "id": "1772897146726",
+    "videoUrl": "/videos/1ICQV4KL2_6QBODD.MP4",
+    "thumbnailUrl": "/images/thumbnails/1ICQV4KL2_6QBODD-thumb.jpg"
+  },
+  {
+    "title": "DJ Charle$ - Nomad Party",
+    "location": "Da Nang, Vietnam",
+    "date": "2024-03-07",
+    "category": "Club",
+    "youtubeId": "",
+    "id": "1772897264710",
+    "videoUrl": "/videos/IMG_5313.MOV",
+    "thumbnailUrl": "/images/thumbnails/IMG_5313-thumb.jpg"
+  },
+  {
+    "title": "DJ CHarle$ - Wedding",
+    "location": "Da Nang, Vietnam",
+    "date": "2024-07-08",
+    "category": "Private",
+    "youtubeId": "",
+    "id": "1772897267293",
+    "videoUrl": "/videos/IMG_4629.MOV",
+    "thumbnailUrl": "/images/thumbnails/IMG_4629-thumb.jpg"
   }
 ]

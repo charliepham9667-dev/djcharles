@@ -33,10 +33,9 @@ function TikTokIcon() {
 }
 
 const SOCIAL_LINKS = [
-  { label: 'Instagram', href: 'https://instagram.com', Icon: InstagramIcon },
-  { label: 'SoundCloud', href: 'https://soundcloud.com', Icon: SoundCloudIcon },
-  { label: 'YouTube', href: 'https://youtube.com', Icon: YouTubeIcon },
-  { label: 'TikTok', href: 'https://tiktok.com', Icon: TikTokIcon },
+  { label: 'Instagram', href: 'https://www.instagram.com/Charliepham', Icon: InstagramIcon },
+  { label: 'SoundCloud', href: 'https://soundcloud.com/djcharles1996', Icon: SoundCloudIcon },
+  { label: 'YouTube', href: 'https://www.youtube.com/@Djcharless', Icon: YouTubeIcon },
 ]
 
 export default function Footer() {
@@ -63,7 +62,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center md:text-right">
-          <p className="font-mono text-xs text-white/40">placeholder@djcharles.com</p>
+          <p className="font-mono text-xs text-white/40">Charliepham9667@gmail.com</p>
           <p className="font-mono text-xs text-white/30 mt-1">© 2026 DJ Charle$. All rights reserved.</p>
         </div>
       </div>
