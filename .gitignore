@@ -36,9 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
-# uploaded media — stored in Vercel Blob in production
-/public/videos/
-/public/images/thumbnails/
+# uploaded media — committed as compressed files
+# /public/videos/
+# /public/images/thumbnails/
 
 # typescript
 *.tsbuildinfo
