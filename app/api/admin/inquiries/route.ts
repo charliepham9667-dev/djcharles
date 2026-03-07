@@ -1,12 +1,6 @@
 import { NextResponse } from 'next/server'
-import { verifySession, SESSION_COOKIE } from '@/lib/auth'
+import { verifySession, getSessionCookie } from '@/lib/auth'
 import { getInquiries } from '@/lib/kv'
-
-function getSessionCookie(req: Request): string | undefined {
-  const cookieHeader = req.headers.get('cookie') ?? ''
-  const match = cookieHeader.match(new RegExp(`(?:^|;\\s*)${SESSION_COOKIE}=([^;]+)`))
-  return match?.[1]
-}
 
 export async function GET(req: Request) {
   const cookie = getSessionCookie(req)

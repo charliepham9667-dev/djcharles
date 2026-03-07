@@ -33,3 +33,20 @@ describe('GET /api/admin/inquiries', () => {
     expect(res.status).toBe(200)
   })
 })
+
+describe('PATCH /api/admin/inquiries/[id]', () => {
+  it('returns 401 without cookie', async () => {
+    const res = await PATCH(makeRequest('PATCH', { status: 'Confirmed' }, false), { params: Promise.resolve({ id: '1' }) })
+    expect(res.status).toBe(401)
+  })
+
+  it('returns 400 for invalid status', async () => {
+    const res = await PATCH(makeRequest('PATCH', { status: 'InvalidStatus' }), { params: Promise.resolve({ id: '1' }) })
+    expect(res.status).toBe(400)
+  })
+
+  it('returns 200 for valid status update', async () => {
+    const res = await PATCH(makeRequest('PATCH', { status: 'Confirmed' }), { params: Promise.resolve({ id: '1' }) })
+    expect(res.status).toBe(200)
+  })
+})

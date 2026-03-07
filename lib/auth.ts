@@ -8,6 +8,12 @@ export function signSession(password: string): string {
   return createHmac('sha256', secret).update(password).digest('hex')
 }
 
+export function getSessionCookie(req: Request): string | undefined {
+  const cookieHeader = req.headers.get('cookie') ?? ''
+  const match = cookieHeader.match(new RegExp(`(?:^|;\\s*)${SESSION_COOKIE}=([^;]+)`))
+  return match?.[1]
+}
+
 export function verifySession(cookie: string): boolean {
   if (!cookie) return false
   try {
