@@ -43,7 +43,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black px-6 md:px-12 py-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <span className="font-spartan font-black text-xl text-gold uppercase tracking-tight">
+        <span className="font-bebas text-2xl text-white uppercase tracking-wide">
           DJ Charle$
         </span>
 
@@ -55,7 +55,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="text-gold/70 hover:text-gold transition-colors duration-200"
+              className="text-white/35 hover:text-white transition-colors duration-200"
             >
               <Icon />
             </Link>
