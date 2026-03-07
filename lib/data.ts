@@ -84,7 +84,7 @@ export async function getSiteConfig(): Promise<SiteConfig> {
     videosImage: null,
     mixesImage: null,
     bookingImage: null,
-    ...siteJson,
+    ...(siteJson as Partial<SiteConfig>),
   }
   try {
     const data = await kv.get<SiteConfig>(K.site)
