@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
     const ext = file.name.split('.').pop()?.toLowerCase() || 'jpg'
     const publicPath = await saveFile(file, 'images', `${dest}.${ext}`)
     const site = await getSiteConfig()
-    ;(site as Record<string, string | null>)[`${dest}Image`] = publicPath
+    ;(site as unknown as Record<string, string | null>)[`${dest}Image`] = publicPath
     await setSiteConfig(site)
     return NextResponse.json({ path: publicPath })
   }
