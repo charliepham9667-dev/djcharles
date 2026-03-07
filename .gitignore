@@ -38,7 +38,6 @@ yarn-error.log*
 
 # uploaded media — stored in Vercel Blob in production
 /public/videos/
-/public/images/gallery/
 /public/images/thumbnails/
 
 # typescript
