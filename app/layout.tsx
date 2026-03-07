@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { League_Spartan, Inter, DM_Mono } from 'next/font/google'
+import { Bebas_Neue, Inter, DM_Mono } from 'next/font/google'
 import './globals.css'
 
-const spartan = League_Spartan({
+const bebas = Bebas_Neue({
   subsets: ['latin'],
-  variable: '--font-spartan',
-  weight: ['700', '800', '900'],
+  variable: '--font-bebas',
+  weight: '400',
 })
 
 const inter = Inter({
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${spartan.variable} ${inter.variable} ${dmMono.variable} bg-black text-white font-inter antialiased`}>
+      <body className={`${bebas.variable} ${inter.variable} ${dmMono.variable} bg-black text-white font-inter antialiased`}>
         {children}
       </body>
     </html>
