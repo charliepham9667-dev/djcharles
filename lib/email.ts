@@ -1,10 +1,12 @@
 import { Resend } from 'resend'
 import type { Inquiry } from '@/types'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY)
+}
 
 export async function sendClientEmail(inquiry: Inquiry, pdfBuffer: Buffer): Promise<void> {
-  await resend.emails.send({
+  await getResend().emails.send({
     from: 'DJ Charle$ <noreply@djcharles.com>',
     to: [inquiry.email],
     subject: 'DJ Charle$ — Your Rate Card',
@@ -45,7 +47,7 @@ export async function sendAdminEmail(inquiry: Inquiry): Promise<void> {
     )
     .join('')
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from: 'DJ Charle$ Bookings <noreply@djcharles.com>',
     to: [adminEmail],
     subject: `New Booking Inquiry — ${inquiry.eventType}`,
